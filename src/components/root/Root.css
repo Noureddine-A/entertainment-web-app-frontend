@@ -1,0 +1,14 @@
+.entertainment__app-container {
+    display: grid;
+    grid-template-columns: 1fr 8fr;
+    width: 100vw;
+    min-height: 100vh;
+    background-color: var(--dark-blue);
+    z-index: -1;
+}
+
+@media only screen and (max-width: 1000px) {
+    .entertainment__app-container {
+        display: block;
+    }
+}

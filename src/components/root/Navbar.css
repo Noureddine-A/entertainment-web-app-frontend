@@ -1,0 +1,140 @@
+.entertainment__navbar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.entertainment__navbar-contents-container {
+  display: block;
+  width: 70%;
+  height: 95%;
+  background-color: var(--semi-dark-blue);
+  border-radius: 10px;
+}
+
+.entertainment__navbar-content-logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10%;
+  width: 100%;
+}
+
+.entertainment__navbar-content-options-container {
+  display: block;
+  height: 80%;
+  width: 100%;
+  padding-top: 2rem;
+}
+
+.entertainment__navbar-content-options-home-container,
+.entertainment__navbar-content-options-movie-container,
+.entertainment__navbar-content-options-tv-show-container,
+.entertainment__navbar-content-options-bookmark-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+
+.entertainment__navbar-content-options-home-icon,
+.entertainment__navbar-content-options-movie-icon,
+.entertainment__navbar-content-options-tv-show-icon,
+.entertainment__navbar-content-options-bookmark-icon {
+  fill: #5a698f;
+}
+
+.entertainment__navbar-content-options-home-icon:hover,
+.entertainment__navbar-content-options-home-icon-active,
+.entertainment__navbar-content-options-movie-icon:hover,
+.entertainment__navbar-content-options-movie-icon-active,
+.entertainment__navbar-content-options-tv-show-icon:hover,
+.entertainment__navbar-content-options-tv-show-icon-active,
+.entertainment__navbar-content-options-bookmark-icon:hover,
+.entertainment__navbar-content-options-bookmark-icon-active {
+  fill: var(--white);
+}
+
+.entertainment__navbar-content-user-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10%;
+  width: 100%;
+}
+
+.entertainment__navbar-content-user-profile {
+  height: 57%;
+  width: 50%;
+  border-radius: 50%;
+  border: 1px var(--white) solid;
+  background-image: url("../../assets/images/image-avatar.png");
+  background-size: cover;
+}
+
+@media only screen and (max-width: 1024px) {
+  .entertainment__navbar-container {
+    width: 100vw;
+    height: 10vh;
+  }
+
+  .entertainment__navbar-contents-container {
+    display: flex;
+    width: 90%;
+    height: 70%;
+  }
+
+  .entertainment__navbar-content-logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    height: 100%;
+  }
+
+  .entertainment__navbar-content-options-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 100%;
+    padding-top: 0rem;
+    gap: 2rem;
+  }
+
+  .entertainment__navbar-content-options-home-container,
+  .entertainment__navbar-content-options-movie-container,
+  .entertainment__navbar-content-options-tv-show-container,
+  .entertainment__navbar-content-options-bookmark-container {
+    margin-bottom: 0rem;
+  }
+
+  .entertainment__navbar-content-user-container {
+    width: 10%;
+    height: 100%;
+  }
+
+  .entertainment__navbar-content-user-profile {
+    height: 50%;
+    width: 50%;
+  }
+
+}
+
+@media only screen and (max-width: 430px) {
+    .entertainment__navbar-content-logo-container {
+        width: 20%;
+      }
+
+      .entertainment__navbar-content-options-container {
+        width: 60%;
+        gap: 1.5rem;
+        width: 80%;
+      }
+
+      .entertainment__navbar-content-user-container {
+        width: 20%;
+      }
+}
