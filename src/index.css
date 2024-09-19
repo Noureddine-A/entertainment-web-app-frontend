@@ -14,6 +14,11 @@
   src: url('./assets/fonts/Outfit-Medium.ttf');
 }
 
+@font-face {
+  font-family: outfit-extralight;
+  src: url('./assets/fonts/Outfit-ExtraLight.ttf');
+}
+
 :root {
 
   --red: hsl(0, 97%, 63%);
@@ -24,4 +29,5 @@
 
   --outfit-light: outfit-light;
   --outfit-medium: outfit-medium;
+  --outfit-extralight: outfit-extralight;
 }

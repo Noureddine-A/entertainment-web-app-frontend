@@ -54,9 +54,7 @@ const Navbar = () => {
           </div>
         </div>
         <div className="entertainment__navbar-content-user-container">
-            <div className="entertainment__navbar-content-user-profile">
-                
-            </div>
+            <div className="entertainment__navbar-content-user-profile"/>
         </div>
       </nav>
     </div>

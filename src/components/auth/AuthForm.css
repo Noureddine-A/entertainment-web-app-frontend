@@ -1,0 +1,154 @@
+.entertainment__auth-container {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--dark-blue);
+}
+
+.entertainment__auth-logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    height: 20%;
+    margin: auto;
+}
+
+.entertainment__auth-form-container {
+    display: block;
+    background-color: var(--semi-dark-blue);
+    width: 40%;
+    margin: auto;
+    border-radius: 20px;
+    padding-top: 3rem;
+    padding-left: 3rem;
+    padding-right: 2rem;
+}
+
+.entertainment__auth-form-container h1 {
+    font-family: var(--outfit-extralight);
+    color: var(--white);
+    letter-spacing: 0.1rem;
+    margin-bottom: 3rem;
+}
+
+.entertainment__auth-form-email-container,
+.entertainment__auth-form-password-container,
+.entertainment__auth-form-repeat-password-container {
+    width: 100%;
+    height: 15%;
+    margin-bottom: 1rem;
+}
+
+.entertainment__auth-form-email-input,
+.entertainment__auth-form-password-input,
+.entertainment__auth-form-repeat-password-input {
+    width: 100%;
+    height: 100%;
+    padding-left: 1.5rem;
+    font-family: var(--outfit-light);
+    background:transparent;
+    border: none;
+    border-bottom: 1.5px solid var(--grayish-blue);
+    outline: none;
+    font-size: 15px;
+    letter-spacing: 0.05rem;
+}
+
+.entertainment__auth-form-email-container input:focus,
+.entertainment__auth-form-password-container input:focus,
+.entertainment__auth-form-repeat-password-container input:focus {
+    color: var(--white);
+    border-bottom: 2px solid var(--white);
+    caret-color: var(--red);
+}
+
+.entertainment__auth-form-button-container {
+    height: 15%;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.entertainment__auth-form-button-container button {
+    width: 100%;
+    font-family: var(--outfit-light);
+    font-size: 15px;
+    letter-spacing: 0.05rem;
+    border-radius: 10px;
+    border:none;
+    background-color: var(--red);
+    color: var(--white);
+    height: 48px;
+}
+
+.entertainment__auth-form-button-container button:hover {
+    background-color: var(--white);
+    color: var(--semi-dark-blue);
+    cursor: pointer;
+}
+
+.entertainment__auth-form-no-account-container {
+    display: flex;
+    justify-content: center;
+    height: 15%;
+    width: 100%;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.entertainment__auth-form-no-account-container p {
+    font-family: var(--outfit-light);
+    font-size: 15px;
+    letter-spacing: 0.05rem;
+    color: var(--white);
+    margin-right: 0.5rem;
+}
+
+.entertainment__auth-form-no-account-container a {
+    color: var(--red);
+    font-family: var(--outfit-light);
+    font-size: 15px;
+    letter-spacing: 0.05rem;
+    text-decoration: none;
+}
+
+
+/*Error*/
+
+.entertainment__auth-form-email-container-error,
+.entertainment__auth-form-password-container-error,
+.entertainment__auth-form-repeat-password-container-error {
+    display: flex;
+    width: 100%;
+    height: 15%;
+    border-bottom: 1px solid var(--red);
+    margin-bottom: 1rem;
+}
+
+.entertainment__auth-form-email-container-error input,
+.entertainment__auth-form-password-container-error input,
+.entertainment__auth-form-repeat-password-container-error input {
+    width: 75%;
+    height: 100%;
+    background:transparent;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    letter-spacing: 0.05rem;
+    padding-left: 1.5rem;
+    font-family: var(--outfit-light);
+}
+
+.entertainment__auth-form-email-error-msg-container,
+.entertainment__auth-form-password-error-msg-container,
+.entertainment__auth-form-repeat-password-error-msg-container {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-family: var(--outfit-extralight);
+    color: var(--red);
+    font-size: 15px;
+}
+
+
