@@ -54,12 +54,12 @@
   outline: none;
   font-size: 15px;
   letter-spacing: 0.05rem;
+  color: var(--white);
 }
 
 .entertainment__auth-form-email-container input:focus,
 .entertainment__auth-form-password-container input:focus,
 .entertainment__auth-form-repeat-password-container input:focus {
-  color: var(--white);
   border-bottom: 2px solid var(--white);
   caret-color: var(--red);
 }
@@ -121,7 +121,7 @@
 .entertainment__auth-form-repeat-password-container-error {
   display: flex;
   width: 100%;
-  height: 15%;
+  height: 7vh;
   border-bottom: 1px solid var(--red);
   margin-bottom: 1rem;
 }
@@ -163,7 +163,10 @@
 
   .entertainment__auth-form-email-container,
   .entertainment__auth-form-password-container,
-  .entertainment__auth-form-repeat-password-container {
+  .entertainment__auth-form-repeat-password-container,
+  .entertainment__auth-form-email-container-error,
+  .entertainment__auth-form-password-container-error,
+  .entertainment__auth-form-repeat-password-container-error {
     height: 6vh;
   }
 
@@ -185,17 +188,17 @@
 }
 
 @media only screen and (max-width: 430px) {
+  .entertainment__auth-form-container {
+    width: 90%;
+    padding-left: 1.5rem;
+  }
 
-    .entertainment__auth-form-container {
-        width: 90%;
-        padding-left: 1.5rem;
-      }
-
-      .entertainment__auth-form-email-container,
+  .entertainment__auth-form-email-container,
   .entertainment__auth-form-password-container,
-  .entertainment__auth-form-repeat-password-container {
+  .entertainment__auth-form-repeat-password-container,
+  .entertainment__auth-form-email-container-error,
+  .entertainment__auth-form-password-container-error,
+  .entertainment__auth-form-repeat-password-container-error {
     height: 7vh;
   }
-    
-
 }
