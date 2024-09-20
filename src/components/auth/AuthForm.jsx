@@ -6,13 +6,13 @@ import { Form, Link } from "react-router-dom";
 import Logo from "../../assets/images/logo.svg";
 
 const AuthForm = ({ mode }) => {
-  let formHeight = "50%";
-  let buttonHeight = "100%";
+  // let formHeight = "50%";
+  // let buttonHeight = "100%";
 
-  if (mode === "signup") {
-    formHeight = "65%";
-    buttonHeight = "90%";
-  }
+  // if (mode === "signup") {
+  //   formHeight = "65%";
+  //   buttonHeight = "90%";
+  // }
 
   return (
     <div className="entertainment__auth-container" method="post">
@@ -21,7 +21,7 @@ const AuthForm = ({ mode }) => {
       </div>
       <Form
         className="entertainment__auth-form-container"
-        style={{ height: formHeight }}
+        
       >
         {mode === "signup" ? <h1>Sign Up</h1> : <h1>Login</h1>}
         {/*Show the part that is commented out conditionally when an error has been detected*/}
@@ -71,18 +71,20 @@ const AuthForm = ({ mode }) => {
         </div> */}
 
         <div className="entertainment__auth-form-button-container">
-          <button style={{ height: buttonHeight }}>
-            Login to your account
+          <button >
+            {mode === "signup" ? "Create an account" : "Login to your account"}
           </button>
         </div>
         <div className="entertainment__auth-form-no-account-container">
           {mode === "signup" ? (
             <>
-              <p>Already have an account?</p> <Link to="/login">Login</Link>{" "}
+              <p>Already have an account?</p>{" "}
+              <Link to="/auth/login">Login</Link>{" "}
             </>
           ) : (
             <>
-              <p>Don't have an account?</p> <Link to="/signup">Sign Up</Link>
+              <p>Don't have an account?</p>{" "}
+              <Link to="/auth/signup">Sign Up</Link>
             </>
           )}
         </div>
