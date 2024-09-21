@@ -2,7 +2,7 @@ import "./App.css";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Signup, { signupAction } from "./components/auth/Signup";
-import Login from "./components/auth/Login";
+import Login, {loginAction} from "./components/auth/Login";
 import Root from "./components/root/Root";
 
 const router = createBrowserRouter([
@@ -16,6 +16,7 @@ const router = createBrowserRouter([
       {
         path: "login",
         element: <Login />,
+        action: loginAction
       },
       {
         path: "signup",

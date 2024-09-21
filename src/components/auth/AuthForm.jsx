@@ -41,8 +41,6 @@ const AuthForm = ({ mode }) => {
     </div>
   );
 
-  console.log(actionData);
-
   for (let i = 0; i < actionData?.length; i++) {
     if (actionData[i].value === "username") {
       userInputField = (
@@ -86,7 +84,7 @@ const AuthForm = ({ mode }) => {
       <Form
         className="entertainment__auth-form-container"
         method="post"
-        action="/auth/signup"
+        action={`/auth/${mode}`}
       >
         {mode === "signup" ? <h1>Sign Up</h1> : <h1>Login</h1>}
         {userInputField}
