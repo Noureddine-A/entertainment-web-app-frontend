@@ -1,0 +1,44 @@
+.entertainment__search-container {
+    width: 50%;
+    height: 7vh;
+    margin-bottom: 1rem;
+}
+
+.entertainment__search-container input {
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    background-image: url('../../assets/images/icon-search.svg');
+    background-repeat: no-repeat;
+    background-position: center left;
+    padding-left: 3rem;
+    border: none;
+    font-family: var(--outfit-light);
+    font-size: 24px;
+    color: var(--white);
+}
+
+.entertainment__search-container input:focus {
+    outline: none;
+    caret-color: var(--red);
+}
+
+@media only screen and (max-width: 1024px) {
+
+    .entertainment__search-container {
+        display:flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .entertainment__search-container input {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .entertainment__search-container input {
+        font-size: 16px;
+    }
+
+}

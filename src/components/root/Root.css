@@ -7,8 +7,20 @@
     z-index: -1;
 }
 
-@media only screen and (max-width: 1000px) {
+.entertainment__home-container {
+    display: block;
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 2rem;
+}
+
+@media only screen and (max-width: 1024px) {
     .entertainment__app-container {
         display: block;
+        width: 100%;
+    }
+
+    .entertainment__home-container {
+        padding-top: 0rem;
     }
 }

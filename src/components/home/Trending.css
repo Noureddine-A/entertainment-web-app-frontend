@@ -1,0 +1,11 @@
+.entertainment__trending-container {
+    min-width: 100%;
+    height: 20vh;
+}
+
+.entertainment__trending-container h1 {
+    font-family: var(--outfit-extralight);
+    font-size: 32px;
+    margin-bottom: 1rem;
+    color: var(--white);
+}
