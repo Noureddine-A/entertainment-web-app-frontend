@@ -1,0 +1,23 @@
+.entertainment__recommended-header {
+  font-family: var(--outfit-extralight);
+  font-size: 32px;
+  margin-bottom: 2rem;
+  color: var(--white);
+}
+
+.entertainment__recommended-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  min-height: 50vw;
+}
+
+@media only screen and (max-width: 1024px) {
+  .entertainment__recommended-header {
+    margin-left: 2rem;
+  }
+
+  .entertainment__recommended-container {
+    margin-left: 2rem;
+  }
+}
