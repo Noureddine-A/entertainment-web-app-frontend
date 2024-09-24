@@ -46,15 +46,18 @@
   fill: #5a698f;
 }
 
-.entertainment__navbar-content-options-home-icon:hover,
 .entertainment__navbar-content-options-home-icon-active,
-.entertainment__navbar-content-options-movie-icon:hover,
 .entertainment__navbar-content-options-movie-icon-active,
-.entertainment__navbar-content-options-tv-show-icon:hover,
 .entertainment__navbar-content-options-tv-show-icon-active,
-.entertainment__navbar-content-options-bookmark-icon:hover,
 .entertainment__navbar-content-options-bookmark-icon-active {
   fill: var(--white);
+}
+
+.entertainment__navbar-content-options-home-icon:hover,
+.entertainment__navbar-content-options-movie-icon:hover,
+.entertainment__navbar-content-options-tv-show-icon:hover,
+.entertainment__navbar-content-options-bookmark-icon:hover {
+  fill: var(--red);
 }
 
 .entertainment__navbar-content-user-container {
@@ -120,21 +123,20 @@
     height: 50%;
     width: 50%;
   }
-
 }
 
 @media only screen and (max-width: 430px) {
-    .entertainment__navbar-content-logo-container {
-        width: 20%;
-      }
+  .entertainment__navbar-content-logo-container {
+    width: 20%;
+  }
 
-      .entertainment__navbar-content-options-container {
-        width: 60%;
-        gap: 1.5rem;
-        width: 80%;
-      }
+  .entertainment__navbar-content-options-container {
+    width: 60%;
+    gap: 1.5rem;
+    width: 80%;
+  }
 
-      .entertainment__navbar-content-user-container {
-        width: 20%;
-      }
+  .entertainment__navbar-content-user-container {
+    width: 20%;
+  }
 }

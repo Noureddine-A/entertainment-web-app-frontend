@@ -1,11 +1,11 @@
-.entertainment__recommended-header {
+.entertainment__content-overview-header {
   font-family: var(--outfit-extralight);
   font-size: 32px;
   margin-bottom: 2rem;
   color: var(--white);
 }
 
-.entertainment__recommended-container {
+.entertainment__content-overview-container {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
@@ -13,11 +13,11 @@
 }
 
 @media only screen and (max-width: 1024px) {
-  .entertainment__recommended-header {
+  .entertainment__content-overview-header {
     margin-left: 2rem;
   }
 
-  .entertainment__recommended-container {
+  .entertainment__content-overview-container {
     margin-left: 2rem;
   }
 }

@@ -1,17 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 
-import "./RecommendedItem.css";
+import "./ContentOverviewItem.css";
 
-const RecommendedItem = ({ image, releaseYear, genre, title }) => {
+const ContentOverviewItem = ({ image, releaseYear, genre, title }) => {
+  const [display, setDisplay] = useState({ display: "none" });
   return (
-    <div className="entertainment__recommended-item-container">
-      <div className="entertainment__recommended-img-container">
+    <div
+      className="entertainment__content-overview-item-container"
+      onMouseEnter={(e) => {
+        setDisplay({ display: "flex" });
+      }}
+      onMouseLeave={(e) => {
+        setDisplay({ display: "none" });
+      }}
+    >
+      <div className="entertainment__content-overview-img-container">
+        <div className="entertainment__content-play-button-container" style={display}>
+          <div className="entertainment__content-play-contents-container">
+            <button/> <p>Play</p>
+          </div>
+        </div>
         <img src={image} alt={image} />
-        <button />
+        <button className="entertainment__content-overview-bookmark-button"/>
       </div>
-      <div className="entertainment__recommended-details-container">
-        <div className="entertainment__recommended-top-container">
-          <div className="entertainment__recommended-release-year-container">
+      <div className="entertainment__content-overview-details-container">
+        <div className="entertainment__content-overview-top-container">
+          <div className="entertainment__content-overview-release-year-container">
             <p>{releaseYear}</p>
           </div>
           <div className="entertainment__dot-wrapper-container">
@@ -19,7 +33,7 @@ const RecommendedItem = ({ image, releaseYear, genre, title }) => {
           </div>
           <div className="entertainment__category-container">
             <div className="entertainment__category-img-container">
-            {genre === "Movie" ? (
+              {genre === "Movie" ? (
                 <>
                   <svg
                     width="20"
@@ -47,12 +61,12 @@ const RecommendedItem = ({ image, releaseYear, genre, title }) => {
             </div>
           </div>
         </div>
-        <div className="entertainment__recommended-title-container">
-            <h3>{title}</h3>
+        <div className="entertainment__content-overview-title-container">
+          <h3>{title}</h3>
         </div>
       </div>
     </div>
   );
 };
 
-export default RecommendedItem;
+export default ContentOverviewItem;

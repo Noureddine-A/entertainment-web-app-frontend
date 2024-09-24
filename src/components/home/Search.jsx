@@ -2,13 +2,13 @@ import React from "react";
 
 import "./Search.css";
 
-const Search = () => {
+const Search = ({placeholder}) => {
   return (
     <div className="entertainment__search-container">
       <input
         type="text"
         name="searchTerm"
-        placeholder="Search for movies or TV series"
+        placeholder={`Search for ${placeholder}`}
       />
     </div>
   );

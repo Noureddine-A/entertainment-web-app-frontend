@@ -1,11 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./TrendingItem.css";
 
 const TrendingItem = ({ image, releaseYear, genre, title }) => {
+  const [display, setDisplay] = useState({ display: "none" });
 
   return (
-    <div className="entertainment__trending-item-container">
+    <div
+      className="entertainment__trending-item-container"
+      onMouseEnter={(e) => {
+        setDisplay({ display: "flex" });
+      }}
+      onMouseLeave={(e) => {
+        setDisplay({ display: "none" });
+      }}
+    >
+      <div className="entertainment__play-button-container" style={display}>
+        <div className="entertainment__play-contents-container">
+          <button /> <p>Play</p>
+        </div>
+      </div>
       <img src={image} alt={image} />
       <button className="entertainment__trending-bookmark-button" />
       <div className="entertainment__trending-details-container">
