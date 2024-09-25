@@ -3,7 +3,7 @@ export async function getTrendingContent() {
 
   const apiData = await response.json();
 
-  return apiData.trending;
+  return apiData.result;
 }
 
 export async function getRecommendations() {
@@ -11,7 +11,7 @@ export async function getRecommendations() {
 
   const apiData = await response.json();
 
-  return apiData.recommendedList;
+  return apiData.result;
 }
 
 export async function getMovies() {
