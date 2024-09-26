@@ -1,9 +1,17 @@
 import React, { useState } from "react";
 
+import { addBookmark } from "../../util/http";
+
 import "./TrendingItem.css";
+
+import BookmarkEmpty from "../../../assets/images/icon-bookmark-empty.svg";
 
 const TrendingItem = ({ image, releaseYear, genre, title }) => {
   const [display, setDisplay] = useState({ display: "none" });
+
+  function onBookmarkClicked() {
+    addBookmark(title, genre);
+  }
 
   return (
     <div
@@ -21,7 +29,11 @@ const TrendingItem = ({ image, releaseYear, genre, title }) => {
         </div>
       </div>
       <img src={image} alt={image} />
-      <button className="entertainment__trending-bookmark-button" />
+      <button
+        className="entertainment__trending-bookmark-button"
+        style={{ backgroundImage: `url(${BookmarkEmpty})` }}
+        onClick={onBookmarkClicked}
+      />
       <div className="entertainment__trending-details-container">
         <div className="entertainment__trending-details-top-container">
           <div className="entertainment__trending-release-year-container">

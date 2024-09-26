@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import "./Trending.css";
 import TrendingItem from "./util/TrendingItem";
 import { getTrendingContent } from "../util/http";
+import { getAuthToken } from "../auth/util/auth";
+import { redirect } from "react-router";
 
 const Trending = () => {
   const [trending, setTrending] = useState([]);
@@ -47,3 +49,9 @@ const Trending = () => {
 };
 
 export default Trending;
+
+export function loader() {
+  if (!getAuthToken()) {
+    return redirect("/auth/login");
+  }
+}

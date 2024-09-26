@@ -2,8 +2,16 @@ import React, { useState } from "react";
 
 import "./ContentOverviewItem.css";
 
+import BookmarkEmpty from "../../../assets/images/icon-bookmark-empty.svg";
+import BookmarkFull from '../../../assets/images/icon-bookmark-full.svg';
+
 const ContentOverviewItem = ({ image, releaseYear, genre, title }) => {
   const [display, setDisplay] = useState({ display: "none" });
+
+  function onClick() {
+    console.log("clicked");
+  }
+
   return (
     <div
       className="entertainment__content-overview-item-container"
@@ -15,13 +23,20 @@ const ContentOverviewItem = ({ image, releaseYear, genre, title }) => {
       }}
     >
       <div className="entertainment__content-overview-img-container">
-        <div className="entertainment__content-play-button-container" style={display}>
+        <div
+          className="entertainment__content-play-button-container"
+          style={display}
+        >
           <div className="entertainment__content-play-contents-container">
-            <button/> <p>Play</p>
+            <button /> <p>Play</p>
           </div>
         </div>
         <img src={image} alt={image} />
-        <button className="entertainment__content-overview-bookmark-button"/>
+        <button
+          className="entertainment__content-overview-bookmark-button"
+          onClick={onClick}
+          style={{ backgroundImage: `url(${BookmarkEmpty})` }}
+        />
       </div>
       <div className="entertainment__content-overview-details-container">
         <div className="entertainment__content-overview-top-container">

@@ -32,7 +32,7 @@ export async function loginAction({ request }) {
 
   localStorage.setItem("token", apiData.token);
 
-  return redirect("/");
+  return redirect("/home");
 }
 
 export default Login;

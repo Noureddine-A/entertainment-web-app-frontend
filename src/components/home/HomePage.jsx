@@ -5,6 +5,9 @@ import Search from "./Search";
 import Trending from "./Trending";
 import ContentOverview from "./ContentOverview";
 
+import { redirect } from "react-router";
+import { getAuthToken } from "../auth/util/auth";
+
 const HomePage = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -22,3 +25,11 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+export function loader() {
+  if(!getAuthToken()) {
+    return redirect('/auth/login');
+  }
+
+  return null;
+} 

@@ -22,9 +22,10 @@
   border-radius: 50%;
   background-color: #979797c0;
   border: none;
-  background-image: url("../../../assets/images/icon-bookmark-empty.svg");
   background-position: center;
   background-repeat: no-repeat;
+  z-index: 2;
+  cursor: pointer;
 }
 
 .entertainment__trending-details-container {
