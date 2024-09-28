@@ -1,17 +1,33 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-import { addBookmark } from "../../util/http";
+import { addBookmark, deleteBookmark } from "../../util/http";
 
 import "./TrendingItem.css";
 
 import BookmarkEmpty from "../../../assets/images/icon-bookmark-empty.svg";
+import BookmarkFull from "../../../assets/images/icon-bookmark-full.svg";
 
-const TrendingItem = ({ image, releaseYear, genre, title }) => {
+const TrendingItem = ({ image, releaseYear, genre, title, isBookmarked }) => {
   const [display, setDisplay] = useState({ display: "none" });
+  const [bookmark, setBookmark] = useState(false);
 
   function onBookmarkClicked() {
-    addBookmark(title, genre);
+    if (bookmark) {
+      deleteBookmark(title, genre).then((msg) => {
+        setBookmark(false);
+      });
+    } else {
+      addBookmark(title, genre, image, releaseYear).then((msg) => {
+        setBookmark(true);
+      });
+    }
   }
+
+  useEffect(() => {
+    if (isBookmarked) {
+      setBookmark(true);
+    }
+  }, [isBookmarked]);
 
   return (
     <div
@@ -31,7 +47,12 @@ const TrendingItem = ({ image, releaseYear, genre, title }) => {
       <img src={image} alt={image} />
       <button
         className="entertainment__trending-bookmark-button"
-        style={{ backgroundImage: `url(${BookmarkEmpty})` }}
+        style={{
+          backgroundImage:
+            bookmark === true
+              ? `url(${BookmarkFull})`
+              : `url(${BookmarkEmpty})`,
+        }}
         onClick={onBookmarkClicked}
       />
       <div className="entertainment__trending-details-container">

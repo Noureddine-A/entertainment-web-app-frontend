@@ -19,7 +19,7 @@ const HomePage = () => {
     <div className="entertainment__home-container">
       <Search placeholder={"movies or TV series"} search={search} />
       {searchTerm === "" && <Trending />}
-      <ContentOverview header={"Recommended for you"} searchTerm={searchTerm}/>
+      <ContentOverview header={"Recommended for you"} searchTerm={searchTerm} />
     </div>
   );
 };
@@ -27,9 +27,9 @@ const HomePage = () => {
 export default HomePage;
 
 export function loader() {
-  if(!getAuthToken()) {
-    return redirect('/auth/login');
+  if (!getAuthToken()) {
+    return redirect("/auth/login");
   }
 
   return null;
-} 
+}

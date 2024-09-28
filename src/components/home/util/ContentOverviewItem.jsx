@@ -1,16 +1,38 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import "./ContentOverviewItem.css";
 
 import BookmarkEmpty from "../../../assets/images/icon-bookmark-empty.svg";
-import BookmarkFull from '../../../assets/images/icon-bookmark-full.svg';
+import BookmarkFull from "../../../assets/images/icon-bookmark-full.svg";
+import { addBookmark, deleteBookmark } from "../../util/http";
 
-const ContentOverviewItem = ({ image, releaseYear, genre, title }) => {
+const ContentOverviewItem = ({
+  image,
+  releaseYear,
+  genre,
+  title,
+  isBookmarked
+}) => {
   const [display, setDisplay] = useState({ display: "none" });
+  const [bookmark, setBookmark] = useState(false);
 
-  function onClick() {
-    console.log("clicked");
+  function onAddBookmarkClicked() {
+    if (bookmark) {
+      deleteBookmark(title).then((msg) => {
+        setBookmark(false);
+      });
+    } else {
+      addBookmark(title, genre, image, releaseYear).then((msg) => {
+        setBookmark(true);
+      });
+    }
   }
+
+  useEffect(() => {
+    if (isBookmarked) {
+      setBookmark(true);
+    } 
+  }, [isBookmarked]);
 
   return (
     <div
@@ -34,8 +56,13 @@ const ContentOverviewItem = ({ image, releaseYear, genre, title }) => {
         <img src={image} alt={image} />
         <button
           className="entertainment__content-overview-bookmark-button"
-          onClick={onClick}
-          style={{ backgroundImage: `url(${BookmarkEmpty})` }}
+          onClick={onAddBookmarkClicked}
+          style={{
+            backgroundImage:
+              bookmark === true
+                ? `url(${BookmarkFull})`
+                : `url(${BookmarkEmpty})`,
+          }}
         />
       </div>
       <div className="entertainment__content-overview-details-container">

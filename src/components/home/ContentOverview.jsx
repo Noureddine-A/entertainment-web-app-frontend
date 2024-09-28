@@ -2,7 +2,12 @@ import React, { useState, useEffect } from "react";
 
 import "./ContentOverview.css";
 import ContentOverviewItem from "./util/ContentOverviewItem";
-import { getMovies, getRecommendations, getTVSeries } from "../util/http";
+import {
+  getBookmarkedContent,
+  getMovies,
+  getRecommendations,
+  getTVSeries,
+} from "../util/http";
 
 const ContentOverview = ({ header, genre, searchTerm }) => {
   const [content, setContent] = useState([]);
@@ -13,9 +18,9 @@ const ContentOverview = ({ header, genre, searchTerm }) => {
       if (item.original_title) {
         const title = item.original_title.toLowerCase();
         return title.includes(searchTerm.toLowerCase());
-      } else if(item.name) {
+      } else if (item.name) {
         const contentName = item.name.toLowerCase();
-        return contentName.includes(searchTerm.toLowerCase())
+        return contentName.includes(searchTerm.toLowerCase());
       }
       const name = item.original_name.toLowerCase();
       return name.includes(searchTerm.toLowerCase());
@@ -40,6 +45,30 @@ const ContentOverview = ({ header, genre, searchTerm }) => {
         setContent(c);
         setFilteredList(c);
       });
+    } else if (
+      header === "Bookmarked Movies" ||
+      header === "Bookmarked TV Series"
+    ) {
+      let contentList = [];
+      getBookmarkedContent()
+        .then((result) => {
+          if (header.includes("TV")) {
+            contentList = result.filter((item) => {
+              return item.genre === "TV Series";
+            });
+          } else if (header.includes("Movie")) {
+            contentList = result.filter((item) => {
+              return item.genre === "Movie";
+            });
+          }
+        })
+        .then(() => {
+          let finalList = contentList.map((item) => {
+            return { ...item, isBookmarked: true };
+          });
+          setContent(finalList);
+          setFilteredList(finalList);
+        });
     }
   }, [header]);
 
@@ -64,12 +93,19 @@ const ContentOverview = ({ header, genre, searchTerm }) => {
             return (
               <ContentOverviewItem
                 key={index}
-                image={posterPath + c.poster_path}
-                releaseYear={getReleaseYear(
-                  c.release_date ? c.release_date : c.first_air_date
-                )}
+                image={
+                  !c.posterPath ? posterPath + c.poster_path : c.posterPath
+                }
+                releaseYear={
+                  !c.releaseYear
+                    ? getReleaseYear(
+                        c.release_date ? c.release_date : c.first_air_date
+                      )
+                    : c.releaseYear
+                }
                 genre={c.genre ? c.genre : genre}
                 title={c.title ? c.title : c.name}
+                isBookmarked={c.isBookmarked}
               />
             );
           })}
