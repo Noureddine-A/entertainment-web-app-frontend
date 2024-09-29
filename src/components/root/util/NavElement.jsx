@@ -18,7 +18,10 @@ const NavElement = ({ option, path, switchTab, currentlyActive }) => {
       <div
         className={`entertainment__navbar-content-options-${option}-container`}
       >
-        <NavLink to={`/${option}`} onClick={onTabSwitched}>
+        <NavLink
+          to={option === "home" ? "/" : `/${option}`}
+          onClick={onTabSwitched}
+        >
           <svg
             className={svgClass}
             width="20"

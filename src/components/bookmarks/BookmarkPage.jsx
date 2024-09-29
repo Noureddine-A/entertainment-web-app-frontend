@@ -1,30 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import "./BookmarkPage.css";
 import Search from "../home/Search";
 import ContentOverview from "../home/ContentOverview";
-import { getBookmarkedContent } from "../util/http";
 
 const BookmarkPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  // const [moviesBookmarked, setMoviesBookmarked] = useState([]);
-  // const [tvseriesBookmarked, setTvseriesBookmarked] = useState([]);
-
-  // useEffect(() => {
-  //   getBookmarkedContent().then((result) => {
-  //     const movies = result.filter(item => {
-  //       return item.genre === "Movie"
-  //     })
-
-  //     const tvseries = result.filter(item => {
-  //       return item.genre === "TV Series"
-  //     });
-
-  //     setMoviesBookmarked(movies);
-  //     setTvseriesBookmarked(tvseries);
-  //   });
-  // }, []);
-
 
   function search(value) {
     setSearchTerm(value);
