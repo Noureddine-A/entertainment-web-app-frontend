@@ -1,7 +1,6 @@
 import { getAuthToken } from "../auth/util/auth";
 
 export async function getTrendingContent() {
-  console.log(getAuthToken());
   const response = await fetch("http://localhost:8080/entertainment/trending", {
     method: "GET",
     headers: {

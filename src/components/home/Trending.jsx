@@ -40,6 +40,7 @@ const Trending = () => {
                   genre={content.genre}
                   title={content.title ? content.title : content.name}
                   isBookmarked={content.isBookmarked}
+                  index={index}
                 />
               );
             })}

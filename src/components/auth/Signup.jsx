@@ -33,7 +33,6 @@ export async function signupAction({ request }) {
 
   if(response.status !== 200) {
     const apiData = await response.json();
-    console.log(apiData);
     return apiData.error;
   }
 

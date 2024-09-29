@@ -7,9 +7,18 @@ import "./TrendingItem.css";
 import BookmarkEmpty from "../../../assets/images/icon-bookmark-empty.svg";
 import BookmarkFull from "../../../assets/images/icon-bookmark-full.svg";
 
-const TrendingItem = ({ image, releaseYear, genre, title, isBookmarked }) => {
+const TrendingItem = ({
+  image,
+  releaseYear,
+  genre,
+  title,
+  isBookmarked,
+  index,
+}) => {
   const [display, setDisplay] = useState({ display: "none" });
   const [bookmark, setBookmark] = useState(false);
+
+  let marginRight = null;
 
   function onBookmarkClicked() {
     if (bookmark) {
@@ -23,6 +32,10 @@ const TrendingItem = ({ image, releaseYear, genre, title, isBookmarked }) => {
     }
   }
 
+  if (index === 7) {
+    marginRight = "2rem";
+  }
+
   useEffect(() => {
     if (isBookmarked) {
       setBookmark(true);
@@ -32,6 +45,7 @@ const TrendingItem = ({ image, releaseYear, genre, title, isBookmarked }) => {
   return (
     <div
       className="entertainment__trending-item-container"
+      style={{ marginRight: marginRight }}
       onMouseEnter={(e) => {
         setDisplay({ display: "flex" });
       }}
